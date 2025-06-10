@@ -1,0 +1,303 @@
+import type { CheckpointJourney } from "@/components/Checkpoints/CheckpointTracker"
+
+export const COMPREHENSIVE_BUSINESS_JOURNEY: CheckpointJourney = {
+  id: "comprehensive-business-lifecycle",
+  name: "Complete Business Lifecycle Journey",
+  description: "End-to-end business development from idea to exit",
+  overallProgress: 0,
+  phases: [
+    {
+      id: "conception-validation",
+      name: "Conception & Validation",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "problem-identification",
+          name: "Problem Identification",
+          description: "Identify and validate a real market problem",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "market-research",
+          name: "Market Research",
+          description: "Conduct comprehensive market analysis",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "customer-validation",
+          name: "Customer Validation",
+          description: "Interview potential customers and validate demand",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "business-model-design",
+          name: "Business Model Design",
+          description: "Design and validate your business model",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "financial-projections",
+          name: "Financial Projections",
+          description: "Create detailed financial forecasts",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+
+    {
+      id: "legal-financial-foundation",
+      name: "Legal & Financial Foundation",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "business-structure",
+          name: "Business Structure",
+          description: "Choose and establish legal business entity",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "business-registration",
+          name: "Business Registration",
+          description: "Register business name and obtain EIN",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "licenses-permits",
+          name: "Licenses & Permits",
+          description: "Obtain all required business licenses",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "intellectual-property",
+          name: "Intellectual Property",
+          description: "Protect trademarks, copyrights, patents",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "business-banking",
+          name: "Business Banking",
+          description: "Open business bank accounts and establish credit",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "accounting-setup",
+          name: "Accounting Setup",
+          description: "Implement accounting systems and processes",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "insurance-coverage",
+          name: "Insurance Coverage",
+          description: "Secure appropriate business insurance",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+
+    {
+      id: "product-development",
+      name: "Product Development",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "mvp-development",
+          name: "MVP Development",
+          description: "Build minimum viable product",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "product-testing",
+          name: "Product Testing",
+          description: "Test product with beta users",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "quality-assurance",
+          name: "Quality Assurance",
+          description: "Establish quality control processes",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "pricing-strategy",
+          name: "Pricing Strategy",
+          description: "Develop and validate pricing model",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+
+    {
+      id: "market-launch",
+      name: "Market Launch",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "brand-development",
+          name: "Brand Development",
+          description: "Create brand identity and messaging",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "digital-presence",
+          name: "Digital Presence",
+          description: "Build website and social media presence",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "marketing-strategy",
+          name: "Marketing Strategy",
+          description: "Develop and execute marketing plan",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "sales-process",
+          name: "Sales Process",
+          description: "Establish sales systems and processes",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "first-customers",
+          name: "First Customers",
+          description: "Acquire first paying customers",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+
+    {
+      id: "growth-scaling",
+      name: "Growth & Scaling",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "team-building",
+          name: "Team Building",
+          description: "Hire and develop your team",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "operations-scaling",
+          name: "Operations Scaling",
+          description: "Scale operational processes",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "funding-rounds",
+          name: "Funding Rounds",
+          description: "Secure growth capital",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "market-expansion",
+          name: "Market Expansion",
+          description: "Expand to new markets or segments",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "technology-infrastructure",
+          name: "Technology Infrastructure",
+          description: "Build scalable technology systems",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+
+    {
+      id: "maturity-optimization",
+      name: "Maturity & Optimization",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "market-leadership",
+          name: "Market Leadership",
+          description: "Establish market leadership position",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "operational-excellence",
+          name: "Operational Excellence",
+          description: "Achieve operational excellence",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "innovation-pipeline",
+          name: "Innovation Pipeline",
+          description: "Maintain continuous innovation",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "strategic-partnerships",
+          name: "Strategic Partnerships",
+          description: "Develop strategic alliances",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+
+    {
+      id: "exit-succession",
+      name: "Exit & Succession",
+      completionPercentage: 0,
+      checkpoints: [
+        {
+          id: "business-valuation",
+          name: "Business Valuation",
+          description: "Conduct professional business valuation",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "exit-strategy",
+          name: "Exit Strategy",
+          description: "Develop and execute exit strategy",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "succession-planning",
+          name: "Succession Planning",
+          description: "Plan leadership succession",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+        {
+          id: "legacy-planning",
+          name: "Legacy Planning",
+          description: "Plan business and personal legacy",
+          status: "not-started",
+          completionPercentage: 0,
+        },
+      ],
+    },
+  ],
+}
