@@ -1,0 +1,91 @@
+version: 2
+updates:
+  # Main platform dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "02:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "360magicians/core-team"
+    assignees:
+      - "360magicians/maintainers"
+    commit-message:
+      prefix: "🤖"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "auto-update"
+      - "deaf-first-platform"
+
+  # Frontend dependencies
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "daily"
+      time: "02:30"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "360magicians/frontend-team"
+
+  # Python services
+  - package-ecosystem: "pip"
+    directory: "/services/auth-magician"
+    schedule:
+      interval: "daily"
+      time: "03:00"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "pip"
+    directory: "/services/neural-magician"
+    schedule:
+      interval: "daily"
+      time: "03:15"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "pip"
+    directory: "/services/business-magician"
+    schedule:
+      interval: "daily"
+      time: "03:30"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "pip"
+    directory: "/services/job-magician"
+    schedule:
+      interval: "daily"
+      time: "03:45"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "pip"
+    directory: "/services/community-magician"
+    schedule:
+      interval: "daily"
+      time: "04:00"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "pip"
+    directory: "/services/sync-magician"
+    schedule:
+      interval: "daily"
+      time: "04:15"
+    open-pull-requests-limit: 3
+
+  # Docker dependencies
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "02:00"
+    open-pull-requests-limit: 2
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "02:00"
+    open-pull-requests-limit: 2

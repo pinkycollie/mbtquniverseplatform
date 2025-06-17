@@ -1,0 +1,159 @@
+{
+  "version": 2,
+  "name": "360-magicians-platform",
+  "alias": ["360magicians.com", "www.360magicians.com"],
+  "regions": ["iad1", "sfo1"],
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "distDir": ".next"
+      }
+    },
+    {
+      "src": "api/**/*.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["api/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/health"
+    },
+    {
+      "src": "/magicians/(.*)",
+      "dest": "/api/magicians/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ],
+  "env": {
+    "PLATFORM_NAME": "360 Magicians Platform",
+    "PLATFORM_VERSION": "2.0.0",
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_PLATFORM_URL": "https://360magicians.com",
+    "NEXT_PUBLIC_API_URL": "https://api.360magicians.com",
+    "NEXT_PUBLIC_DEAF_FIRST": "true",
+    "NEXT_PUBLIC_ANALYTICS_ID": "@vercel-analytics-id",
+    "DATABASE_URL": "@database-url",
+    "REDIS_URL": "@redis-url",
+    "GCP_PROJECT_ID": "@gcp-project-id",
+    "PINKSYNC_ENDPOINT": "@pinksync-endpoint",
+    "DEAFAUTH_ENDPOINT": "@deafauth-endpoint",
+    "FIBONROSE_ENDPOINT": "@fibonrose-endpoint"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_BUILD_TIME": "@build-time",
+      "NEXT_PUBLIC_COMMIT_SHA": "@commit-sha"
+    }
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30,
+      "memory": 1024
+    },
+    "api/neural-magician/**/*.ts": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 60,
+      "memory": 3008
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization, X-Magician-Key"
+        },
+        {
+          "key": "X-Deaf-First-Platform",
+          "value": "360-Magicians"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/auth",
+      "destination": "https://auth.360magicians.com"
+    },
+    {
+      "source": "/jobs",
+      "destination": "https://jobs.360magicians.com"
+    },
+    {
+      "source": "/business",
+      "destination": "https://business.360magicians.com"
+    },
+    {
+      "source": "/community",
+      "destination": "https://community.360magicians.com"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/auth-magician/(.*)",
+      "destination": "https://auth.360magicians.com/api/$1"
+    },
+    {
+      "source": "/api/job-magician/(.*)",
+      "destination": "https://jobs.360magicians.com/api/$1"
+    },
+    {
+      "source": "/api/business-magician/(.*)",
+      "destination": "https://business.360magicians.com/api/$1"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/health-check",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/update-check",
+      "schedule": "0 */6 * * *"
+    },
+    {
+      "path": "/api/sync-magicians",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}
